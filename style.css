@@ -29,12 +29,35 @@ body {
 .login-section {
     flex: 1;
     background-color: white;
-    padding: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: left; /* Align all text inside the login section to the left */
+    margin-left: 0; /* Removes any left margin */
+    width: 300px; /* Adjust width to fit the form */
+
+
+/* Hide labels but keep them accessible for screen readers */
+label {
+    position: absolute; /* Keep them in the DOM but not visible */
+    left: -9999px; /* Moves them off-screen */
 }
+
+/* Ensure the "Sign in" text is left-aligned */
+h4 {
+    text-align: left; /* Align "Sign in" to the left */
+    margin: 0; /* Ensure no margin is added that can affect alignment */
+    padding-left: 0; /* Remove any padding that might shift the text */
+}
+
+/* Ensure the button container is aligned to the left */
+.button-container {
+    text-align: left; /* Align button container to the left */
+}
+
+}
+
 
 .logo img {
     width: 150px;
@@ -42,7 +65,7 @@ body {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
